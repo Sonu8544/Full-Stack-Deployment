@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 
-const app = express();
+const app = express(); 
 
+// Middleware to parse JSON bodies
 app.use(express.json());
 app.use(cors());
 
@@ -11,10 +12,9 @@ app.get("/api/message", (req, res) => {
 });
 
 
-const PORT = 7777;
-app.listen(PORT, (error) => {
+app.listen(7777, (error) => {
   if (error) {
     console.log(error);
   }
-  console.log(`Server is running on port http://localhost:${PORT}`);
+  console.log(`Server is running on port http://localhost:7777`);
 });
