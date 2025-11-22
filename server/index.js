@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 
@@ -12,9 +15,11 @@ app.get("/api/message", (req, res) => {
 });
 
 
-app.listen(7777, (error) => {
+const PORT = process.env.PORT || 8888;
+
+app.listen(PORT, (error) => {
   if (error) {
     console.log(error);
   }
-  console.log(`Server is running on port http://localhost:7777`);
+  console.log(`Server is running on port http://localhost:${PORT}`);
 });
