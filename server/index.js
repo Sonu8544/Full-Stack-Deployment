@@ -29,9 +29,10 @@ app.get("/api/message", (req, res) => {
   res.send({ message: "Hello from server..." });
 });
 
-const PORT = process.env.PORT || 7777;
+const PORT = 4000;
 
-app.listen(PORT, (error) => {
+// Docker port binding "0.0.0.0",
+app.listen(PORT, "0.0.0.0", (error) => {
   if (error) {
     console.log(error);
   }
