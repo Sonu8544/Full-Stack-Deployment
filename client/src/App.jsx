@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const App = () => {
   const [message, setMessage] = useState("");
+  
+  const getMessage = async () =>{
+    try{
+      const responce = await axios.get("http://localhost:7777/api/message");
+      setMessage(responce.data.message);
+    } catch (error) {
+      console.error("Error fetching message: ", error);
+    }
+  };
   useEffect(() => {
-    fetch("http://localhost:7777/api/message")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
+    getMessage();
   }, []);
+
   return (
     <>
       <div className="text-3xl font-bold text-center mt-10 text-slate-700">
