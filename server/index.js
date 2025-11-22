@@ -29,7 +29,7 @@ app.get("/api/message", (req, res) => {
   res.send({ message: "Hello from server..." });
 });
 
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 7777;
 
 app.listen(PORT, (error) => {
   if (error) {

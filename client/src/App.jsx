@@ -7,7 +7,7 @@ const App = () => {
 
   const getMessage = async () => {
     try {
-      const response = await axios.get("http://localhost:7777/api/message");
+      const response = await axios.get("http://localhost:4000/api/message");
       setMessage(response.data.message);
     } catch (error) {
       console.error("Error fetching message:", error);
